@@ -385,6 +385,7 @@ a:hover { color: var(--gold); }
   align-items: center;
   justify-content: center;
   text-align: center;
+  aspect-ratio: auto; /* grow with content so the tagline never collides with the badge */
   padding: 2.2rem 2rem 3.6rem;
   background:
     radial-gradient(ellipse 90% 55% at 50% 0%, rgba(180, 137, 58, 0.24), transparent 62%),
@@ -472,7 +473,8 @@ a:hover { color: var(--gold); }
 .portrait__badge {
   position: absolute;
   left: -8%;
-  bottom: -10%;
+  bottom: 0;
+  transform: translateY(60%); /* straddles the frame edge; never reaches the tagline */
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -1282,7 +1284,7 @@ a:hover { color: var(--gold); }
   .extras__grid { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
   .check-list { columns: 1; }
-  .portrait__badge { left: 0; bottom: -10%; padding: 0.65rem 1rem; font-size: 0.95rem; }
+  .portrait__badge { left: 0; padding: 0.65rem 1rem; font-size: 0.95rem; }
   .btn { width: 100%; }
   .nav__cta { width: auto; }
   .hero__actions { flex-direction: column; align-items: stretch; }
